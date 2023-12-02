@@ -3,8 +3,8 @@
 }
 
 body {
-	background: #92bde7;
-	color: #485e74;
+	background: #f0f1f3;
+	color: hsl(210, 23%, 37%);
 	line-height: 1.6;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	padding: 1em;
@@ -27,7 +27,7 @@ ul {
 }
 
 .brand span {
-	color: #fff;
+	color: #d34444;
 }
 
 .wrapper {
@@ -39,13 +39,14 @@ ul {
 }
 
 .company-info {
-	background: #c9e6ff;
+	background: hsl(210, 23%, 37%);
 }
 
 .company-info h3,
 .company-info ul {
 	text-align: center;
 	margin: 0 0 1rem 0;
+	color: white;
 }
 
 .contact {
@@ -80,17 +81,17 @@ ul {
 }
 
 .contact form button {
-	background: #c9e6ff;
+	background: #d15d5d;
 	border: 0;
 	text-transform: uppercase;
 }
 
 .contact form button:hover,
 .contact form button:focus {
-	background: #92bde7;
+	background: #de6a6a;
 	color: #fff;
 	outline: 0;
-	transition: background-color 2s ease-out;
+	transition: background-color 1s ease-out;
 }
 
 /* LARGE SCREENS */
