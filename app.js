@@ -1,19 +1,30 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import expressHandlebars from 'express-handlebars';
+import { create } from 'express-handlebars';
+import path from 'path';
 import nodemailer from 'nodemailer';
 
 const app = express();
-//View Engine Setup
-app.engine('handlebars', expressHandlebars);
-app.set('view engine', 'handlebars');
+const hbs = create();
 
-//Body-Parser Middleware
+const __dirname = path.dirname('public');
+
+// View Engine Setup
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.set('views', './views');
+
+// Body-Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Static folder
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
+// Route for the root endpoint
 app.get('/', (req, res) => {
-	res.send('Hello');
+	res.render('contact', { layout: false });
 });
 
+// Server initialization
 app.listen(5000, () => console.log('Running from Port 5000'));
